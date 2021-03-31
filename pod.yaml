@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubia
+  labels: 
+    app: kubia
+spec:
+  containers:
+    - name: kubia-container
+      image: pushlang/kubia
+      ports:
+      - containerPort: 8080

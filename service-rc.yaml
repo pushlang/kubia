@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubia-http
+  labels:
+    app: kubia
+    component: kubia-sv
+spec:
+  selector:
+    app: kubia
+    #component: kubia-rc
+  ports:
+    - protocol: TCP
+      port: 8080 
+      targetPort: 8080
+  type: LoadBalancer
