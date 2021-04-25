@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+echo -e "\nC<---------- Creating kubia resources... ------------->\n" 
+#gcloud compute instance-groups managed resize gke-kubia-default-pool-151b5f24-grp --size=3 -q --verbosity warning > /dev/null \
+#    && echo -e "\n<---------- gcloud pool size set to (3) - done! ------------->\n" \
+#    && gcloud compute disks create --size=10GiB --zone=europe-west4-c pv-a pv-b pv-c -q --verbosity warning > /dev/null \
+#    && echo -e "\n<---------- gcloud gce-disks created - done! ------------->\n" \
+    kubectl apply -f ./all.yaml \
+    && echo -e "\n<---------- kubectl resurces created - done! ------------->\n" \

@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+echo -e "\n<---------- Deleting kubia resurces... ------------->\n" \
+    && kubectl delete sts --all  \
+    && echo -e "\nWaiting for deleting 30s...\n" && sleep 30 \
+    && echo -e "\n<---------- kubectl sts deleted - done! ------------->\n" \
+    && kubectl delete svc --all \
+    && echo -e "\n<---------- kubectl svc deleted - done! ------------->\n" \
+    && kubectl delete pvc --all \
+    && echo -e "\n<---------- kubectl pvc deleted - done! ------------->\n" \
+    && kubectl delete pv --all \
+    && echo -e "\n<---------- kubectl pv deleted - done! ------------->\n" \
+#    && gcloud compute disks delete pv-a pv-b pv-c -q --verbosity warning \
+#    && echo -e "\n<---------- gcloud gce-disks deleted - done! ------------->\n" \
+#    && gcloud compute instance-groups managed resize gke-kubia-default-pool-151b5f24-grp --size=0 -q --verbosity warning > /dev/null \
+#    && echo -e "\n<---------- gcloud pool size set to (0) - done! ------------->\n" \
